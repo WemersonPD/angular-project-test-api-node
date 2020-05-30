@@ -1,0 +1,22 @@
+<div class="text-center mt-3 mb-3">
+  <form >
+    <input type="search" class="rounded"
+      placeholder="Search.."
+      autofocus
+    >
+  </form>
+</div>
+
+
+<ul class="list-unstyled ">
+  <li  *ngFor="let product of products" >
+    <app-product
+      class="d-flex justify-content-center"
+      [nameProduct]="product.title"
+      [descriptionProduct]="product.description"
+      >
+    </app-product>
+  </li>
+</ul>
+
+
