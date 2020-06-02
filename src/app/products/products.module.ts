@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import {NgxPaginationModule} from 'ngx-pagination'
 
-import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductFormComponent } from './product-form/product-form.component';
 
+import { ProductModule } from './product/product.module';
+import { ProductFormModule } from './product-form/product-form.module';
+import { ProductListModule } from './product-list/product-list.module';
 @NgModule({
-  declarations: [
-    ProductComponent,
-    ProductListComponent,
-    ProductFormComponent
-  ],
   imports: [
-    HttpClientModule,
-    CommonModule
+    ProductModule,
+    ProductFormModule,
+    ProductListModule
+
   ],
-  exports: [ProductListComponent]
 })
 export class ProductsModule {
 

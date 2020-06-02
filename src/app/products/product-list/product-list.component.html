@@ -1,22 +1,16 @@
-<div class="text-center mt-3 mb-3">
-  <form >
-    <input type="search" class="rounded"
-      placeholder="Search.."
-      autofocus
-    >
-  </form>
-</div>
+<app-search (OnTyping)="filter = $event">
 
+</app-search>
 
-<ul class="list-unstyled ">
-  <li  *ngFor="let product of products" >
-    <app-product
-      class="d-flex justify-content-center"
-      [nameProduct]="product.title"
-      [descriptionProduct]="product.description"
-      >
-    </app-product>
-  </li>
-</ul>
+<app-products
+  [products]="products | filterByTitle: filter | paginate: {itemsPerPage: 10, currentPage: currentPage}">
+</app-products>
+
+<pagination-controls
+  (pageChange)="currentPage = $event"
+  class="text-center"
+
+>
+</pagination-controls>
 
 

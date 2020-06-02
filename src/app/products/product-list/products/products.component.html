@@ -1,0 +1,22 @@
+<p
+  class="text-muted text-center"
+  *ngIf="!products.length"
+>
+  Sorry, no products with this name
+</p>
+
+<ul class="list-unstyled appDarkOnHover">
+  <!-- O appDarkOnHover é uma diretiva feita por min -->
+  <!-- brightness é uma inbalde propiety de appDarkDirective. -->
+  <li  *ngFor="let product of products" appDarkOnHover brightness="80%">
+    <app-card [title]="product.title" >
+      <app-product
+        class="d-flex justify-content-center"
+
+        [descriptionProduct]="product.description"
+        >
+      </app-product>
+    </app-card>
+  </li>
+</ul>
+
