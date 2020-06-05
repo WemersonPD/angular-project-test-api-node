@@ -15,8 +15,8 @@ export class ResolverListProduct implements Resolve<Observable<Product[]>> {
 
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product[]> | Observable<Observable<Product[]>> | Promise<Observable<Product[]>> {
-    // const userName = route.params.userName  //Caso fosse usar o user name.
-    return this.productService.getProducts()
+    const userName = route.params.userName  //Caso fosse usar o user name.
+    return this.productService.getProducts(userName);
 
   }
 

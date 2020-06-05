@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CardComponent } from './card.component';
+import { VmenssageComponent } from './vmenssage.component';
 
 @NgModule({
   declarations: [
-    CardComponent
+    VmenssageComponent
   ],
   exports: [
-    CardComponent
+    VmenssageComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class CardModule {
-
-}
+export class VmenssageModule{}

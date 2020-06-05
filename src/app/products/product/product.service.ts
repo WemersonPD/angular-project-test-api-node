@@ -13,9 +13,9 @@ export class ProductService {
     private httpClient: HttpClient,
   ){}
 
-  getProducts(){
+  getProducts(userName: string){
 
-    return this.httpClient.get<Product[]>(this.API + '/products')
+    return this.httpClient.get<Product[]>(`${this.API}/user/${userName}/products`)
 
   }
 }
